@@ -1,0 +1,21 @@
+hadoop dfsadmin -safemode leave
+root@3d27cac77609:/# hdfs dfs -mkdir /fold1
+root@3d27cac77609:/# hdfs dfs -mkdir /fold1/fold2
+Trash - что то вроде карзины. Удалить сразу с флагом -skipTrash
+root@3d27cac77609:/# hdfs dfs -touchz /fold1/fold2/file1
+root@3d27cac77609:/# hdfs dfs -rm /fold1/fold2/file1
+Deleted /fold1/fold2/file1
+root@3d27cac77609:/# hdfs dfs -rm -r /fold1
+Deleted /fold1
+
+root@3d27cac77609:/# hdfs dfs -put 123.txt /fold/
+root@3d27cac77609:/# hdfs dfs -cat /fold/123.txt
+root@3d27cac77609:/# hdfs dfs -cat /fold/123.txt | tail -n 3
+root@3d27cac77609:/# hdfs dfs -cat /fold/123.txt | head -n 3
+root@3d27cac77609:/# hdfs dfs -cp /fold/123.txt /
+
+root@3d27cac77609:/# hdfs dfs -setrep -w 1 /123.txt ( 15 секунд, но файл маленький)
+root@3d27cac77609:/# hdfs fsck /123.txt -files -blocks -locations
+root@3d27cac77609:/# hdfs fsck -blockId blk_1060441692
+
+ 
